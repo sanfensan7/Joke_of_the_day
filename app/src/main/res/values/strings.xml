@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">每日笑话</string>
+    <!-- 底部导航栏 -->
+    <string name="title_today">今日笑话</string>
+    <string name="title_favorites">我的收藏</string>
+    <string name="title_categories">笑话分类</string>
+    <string name="title_settings">设置</string>
+    
+    <!-- 今日笑话页面 -->
+    <string name="today_joke">今日笑话</string>
+    <string name="share">分享</string>
+    <string name="favorite">收藏</string>
+    <string name="unfavorite">取消收藏</string>
+    <string name="next_joke">换一个笑话</string>
+    
+    <!-- 收藏页面 -->
+    <string name="no_favorites">您还没有收藏任何笑话</string>
+    
+    <!-- 分类页面 -->
+    <string name="categories">笑话分类</string>
+    
+    <!-- 设置页面 -->
+    <string name="settings">设置</string>
+    <string name="enable_notifications">开启每日笑话推送</string>
+    <string name="notification_time">推送时间</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="font_size">字体大小</string>
+    <string name="small">小</string>
+    <string name="medium">中</string>
+    <string name="large">大</string>
+    
+    <!-- 错误信息 -->
+    <string name="error_loading">加载失败，请稍后重试</string>
+</resources>
