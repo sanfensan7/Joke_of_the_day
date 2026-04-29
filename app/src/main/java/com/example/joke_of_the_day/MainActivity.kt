@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 尽量在 inflate/layout 前应用主题相关设置
+        applySavedThemePreferences()
         super.onCreate(savedInstanceState)
         
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -58,6 +61,14 @@ class MainActivity : AppCompatActivity() {
         
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+    }
+
+    private fun applySavedThemePreferences() {
+        val prefs = getSharedPreferences("joke_preferences", MODE_PRIVATE)
+        val darkModeEnabled = prefs.getBoolean("dark_mode_enabled", false)
+        AppCompatDelegate.setDefaultNightMode(
+            if (darkModeEnabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        )
     }
     
     private fun requestNotificationPermission() {

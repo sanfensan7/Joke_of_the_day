@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ios_bg">#F5F6FA</color>
+    <color name="ios_card">#FFFFFFFF</color>
+    <color name="ios_text_primary">#1C1C1E</color>
+    <color name="ios_text_secondary">#6E6E73</color>
+    <color name="ios_accent">#5A63FF</color>
+    <color name="ios_chip_bg">#ECEEF3</color>
+    <color name="ios_shadow_tint">#12000000</color>
 </resources>

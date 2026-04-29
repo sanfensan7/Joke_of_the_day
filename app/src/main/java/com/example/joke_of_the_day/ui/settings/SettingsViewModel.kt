@@ -1,10 +1,12 @@
 package com.example.joke_of_the_day.ui.settings
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.joke_of_the_day.notification.NotificationScheduler
 import kotlinx.coroutines.launch
 
 class SettingsViewModel(application: Application) : AndroidViewModel(application) {
@@ -98,18 +100,22 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
     
     // 实际实现这些函数需要更多的工作，这里只是框架
     private fun scheduleNotification() {
-        // 使用WorkManager设置每日通知
+        val hour = _notificationHour.value ?: 9
+        val minute = _notificationMinute.value ?: 0
+        NotificationScheduler.scheduleDaily(getApplication(), hour, minute)
     }
     
     private fun cancelNotification() {
-        // 取消通知任务
+        NotificationScheduler.cancel(getApplication())
     }
     
     private fun applyDarkMode(enabled: Boolean) {
-        // 设置深色模式
+        AppCompatDelegate.setDefaultNightMode(
+            if (enabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        )
     }
     
     private fun applyFontSize(size: Int) {
-        // 设置字体大小
+        // 字号由各页面读取 sharedPreferences 并应用到 TextView；这里仅保留设置落盘与状态刷新。
     }
 } 

@@ -63,6 +63,8 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.gson)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.coil)
+    implementation(libs.coil.svg)
     
     kapt(libs.androidx.room.compiler)
     
